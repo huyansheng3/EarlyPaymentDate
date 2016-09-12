@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; maximumscale=1.0" />
+    <title>Early Payment Date</title>
+    <script src="plugins/laydate/laydate.js"></script>
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <section id="discount">
+            <table>
+                <thead><h2>Step 2:Select Early Payment Date<h2></thead>
+                <p id="discount-tips">Select different dates to see different discount rates</p>
+                <tr>
+                    <td class="discount-td-describe">Early Payment Date</td>
+                    <td class="discount-td-result" id="payment_date"></td>
+                </tr>
+                <tr>
+                    <td class="discount-td-describe">Discount Percent</td>
+                    <td class="discount-td-result" id="discount_percent"></td>
+                </tr>
+                <tr>
+                    <td class="discount-td-describe">Discount Amount</td>
+                    <td class="discount-td-result" id="discount_amount"></td>
+                </tr>
+            </table>
+        </section>
+        <input id="calendar" />
+    </div>
+</body>
+<script>
+    laydate.skin('dahong');
+    laydate({
+        elem: '#calendar',
+        event: 'focus',
+        fixed: true,
+        choose: function(dates){
+            var data = [
+                {payment_date:2016-09-12,discount_percent:1.207,discount_amount:552.65},
+                {payment_date:2016-09-11,discount_percent:1.320,discount_amount:622.35},
+                {payment_date:2016-09-10,discount_percent:1.527,discount_amount:782.05},
+                {payment_date:2016-09-09,discount_percent:1.637,discount_amount:922.85},
+            ];
+            var payment_date = document.getElementById('payment_date');
+            var discount_percent = document.getElementById('discount_percent');
+            var discount_amount = document.getElementById('discount_amount');
+            payment_date.innerText = dates;
+            radomInt = Math.floor(Math.random()*4);
+            discount_amount.innerText = '$'+data[radomInt].discount_amount;
+            discount_percent.innerText = data[radomInt].discount_percent+'%';
+
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,24 @@
+* {margin: 0;padding: 0}
+
+ * {font-family: 微软雅黑}
+h2 {font-size: 24px;font-weight: bold;}
+.discount-td-describe {font-size: 20px;font-weight: bold;text-indent:20px;line-height: 30px;}
+#discount-tips {font-size: 16px;color: gray;margin-bottom: 20px;font-weight: bold;}
+#calendar {display: block}
+.container {
+    display: flex;
+    justify-content: center;
+    wrap-option: wrap;
+    margin-top: 20px;
+}
+#discount {margin-right: 30px;}
+.discount-td-result {font-size:20px;text-align: right }
+table {width: 100%}
+@media screen and (max-width: 960px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+    }
+}
