@@ -34,9 +34,11 @@
     laydate.skin('dahong');
     laydate({
         elem: '#calendar',
-        event: 'focus',
+        event: 'click',
         fixed: true,
+        type:'block',
         choose: function(dates){
+            /*此为模拟数据，理论来上说一般此时会使用ajax去后端接口请求数据，由于没有接口，故作罢*/
             var data = [
                 {payment_date:2016-09-12,discount_percent:1.207,discount_amount:552.65},
                 {payment_date:2016-09-11,discount_percent:1.320,discount_amount:622.35},
